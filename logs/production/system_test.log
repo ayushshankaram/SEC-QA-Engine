@@ -1,0 +1,142 @@
+2025-08-07 05:22:48,561 - __main__ - INFO - ============================================================
+2025-08-07 05:22:48,562 - __main__ - INFO - SEC QA ENGINE - FINAL SYSTEM VALIDATION
+2025-08-07 05:22:48,562 - __main__ - INFO - ============================================================
+2025-08-07 05:22:48,562 - __main__ - INFO - 
+🧪 Running Embedding Ensemble test...
+2025-08-07 05:22:48,562 - __main__ - INFO - Testing Embedding Ensemble with fallback models...
+2025-08-07 05:22:48,562 - src.core.embedding_ensemble - ERROR - Failed to initialize Voyage client: Voyage API key is required
+2025-08-07 05:22:48,562 - src.core.embedding_ensemble - INFO - Attempting to use Financial BERT as Voyage fallback
+2025-08-07 05:22:48,562 - src.models.financial_bert - INFO - Loading financial BERT model: nlpaueb/sec-bert-base
+2025-08-07 05:23:37,578 - src.models.financial_bert - INFO - Financial BERT model loaded successfully on cpu
+2025-08-07 05:23:37,579 - src.models.financial_bert - INFO - Model dimension: 768
+2025-08-07 05:23:37,579 - src.core.embedding_ensemble - INFO - Financial BERT initialized as Voyage fallback
+2025-08-07 05:23:37,579 - src.models.fin_e5_client - INFO - Loading model: intfloat/e5-large-v2
+2025-08-07 05:23:47,210 - src.models.fin_e5_client - INFO - Model loaded successfully, embedding dimension: 1024
+2025-08-07 05:23:47,210 - src.models.fin_e5_client - INFO - Initialized FinE5 client with model: intfloat/e5-large-v2
+2025-08-07 05:23:47,210 - src.models.fin_e5_client - INFO - Using device: cpu
+2025-08-07 05:23:47,210 - src.core.embedding_ensemble - INFO - FinE5 client initialized
+2025-08-07 05:23:47,210 - src.models.xbrl_client - INFO - Initialized XBRL client with embedding dimension: 512
+2025-08-07 05:23:47,210 - src.core.embedding_ensemble - INFO - XBRL client initialized
+2025-08-07 05:23:47,210 - src.models.sparse_embeddings - INFO - Initialized SparseEmbeddings with max_features=10000
+2025-08-07 05:23:47,210 - src.core.embedding_ensemble - INFO - Sparse embeddings client initialized (requires fitting)
+2025-08-07 05:23:47,211 - src.core.embedding_ensemble - INFO - Active embedding models: ['voyage', 'fin_e5', 'xbrl', 'sparse']
+2025-08-07 05:23:47,211 - src.core.embedding_ensemble - INFO - Initialized EmbeddingEnsemble with 4 models
+2025-08-07 05:23:47,211 - src.core.embedding_ensemble - INFO - Model weights: {'voyage': 0.4, 'fin_e5': 0.25, 'xbrl': 0.2, 'sparse': 0.15}
+2025-08-07 05:23:47,211 - src.core.embedding_ensemble - INFO - Initialized EmbeddingEnsemble with 4 models
+2025-08-07 05:23:47,211 - src.core.embedding_ensemble - INFO - Model weights: {'voyage': 0.4, 'fin_e5': 0.25, 'xbrl': 0.2, 'sparse': 0.15}
+2025-08-07 05:23:47,211 - __main__ - INFO - Testing embedding for: 'Apple Inc. reported strong quarterly earnings with revenue growth of 15%.'
+2025-08-07 05:23:47,211 - __main__ - ERROR - Embedding ensemble test failed: 'EmbeddingEnsemble' object has no attribute 'get_embeddings'
+2025-08-07 05:23:47,291 - __main__ - INFO - 
+🧪 Running Neo4j Database test...
+2025-08-07 05:23:47,291 - __main__ - INFO - Testing Neo4j database functionality...
+2025-08-07 05:23:47,497 - src.storage.neo4j_client - ERROR - Failed to connect to Neo4j: {code: Neo.ClientError.Security.Unauthorized} {message: The client is unauthorized due to authentication failure.}
+2025-08-07 05:23:47,498 - __main__ - ERROR - Neo4j test failed: {code: Neo.ClientError.Security.Unauthorized} {message: The client is unauthorized due to authentication failure.}
+2025-08-07 05:23:47,498 - __main__ - INFO - 
+🧪 Running Question Processing test...
+2025-08-07 05:23:47,498 - __main__ - INFO - Testing question processing with embedding ensemble...
+2025-08-07 05:23:47,498 - src.core.embedding_ensemble - ERROR - Failed to initialize Voyage client: Voyage API key is required
+2025-08-07 05:23:47,498 - src.core.embedding_ensemble - INFO - Attempting to use Financial BERT as Voyage fallback
+2025-08-07 05:23:47,498 - src.models.financial_bert - INFO - Loading financial BERT model: nlpaueb/sec-bert-base
+2025-08-07 05:23:48,998 - src.models.financial_bert - INFO - Financial BERT model loaded successfully on cpu
+2025-08-07 05:23:48,998 - src.models.financial_bert - INFO - Model dimension: 768
+2025-08-07 05:23:48,998 - src.core.embedding_ensemble - INFO - Financial BERT initialized as Voyage fallback
+2025-08-07 05:23:48,998 - src.models.fin_e5_client - INFO - Loading model: intfloat/e5-large-v2
+2025-08-07 05:23:54,269 - src.models.fin_e5_client - INFO - Model loaded successfully, embedding dimension: 1024
+2025-08-07 05:23:54,269 - src.models.fin_e5_client - INFO - Initialized FinE5 client with model: intfloat/e5-large-v2
+2025-08-07 05:23:54,269 - src.models.fin_e5_client - INFO - Using device: cpu
+2025-08-07 05:23:54,269 - src.core.embedding_ensemble - INFO - FinE5 client initialized
+2025-08-07 05:23:54,269 - src.models.xbrl_client - INFO - Initialized XBRL client with embedding dimension: 512
+2025-08-07 05:23:54,269 - src.core.embedding_ensemble - INFO - XBRL client initialized
+2025-08-07 05:23:54,270 - src.models.sparse_embeddings - INFO - Initialized SparseEmbeddings with max_features=10000
+2025-08-07 05:23:54,270 - src.core.embedding_ensemble - INFO - Sparse embeddings client initialized (requires fitting)
+2025-08-07 05:23:54,270 - src.core.embedding_ensemble - INFO - Active embedding models: ['voyage', 'fin_e5', 'xbrl', 'sparse']
+2025-08-07 05:23:54,270 - src.core.embedding_ensemble - INFO - Initialized EmbeddingEnsemble with 4 models
+2025-08-07 05:23:54,270 - src.core.embedding_ensemble - INFO - Model weights: {'voyage': 0.4, 'fin_e5': 0.25, 'xbrl': 0.2, 'sparse': 0.15}
+2025-08-07 05:23:54,270 - src.core.embedding_ensemble - INFO - Initialized EmbeddingEnsemble with 4 models
+2025-08-07 05:23:54,270 - src.core.embedding_ensemble - INFO - Model weights: {'voyage': 0.4, 'fin_e5': 0.25, 'xbrl': 0.2, 'sparse': 0.15}
+2025-08-07 05:23:54,270 - __main__ - INFO - Testing question: 'What was Apple's revenue growth strategy in their latest filing?'
+2025-08-07 05:23:54,270 - __main__ - ERROR - Question processing test failed: 'EmbeddingEnsemble' object has no attribute 'get_embeddings'
+2025-08-07 05:23:54,343 - __main__ - INFO - 
+============================================================
+2025-08-07 05:23:54,343 - __main__ - INFO - TEST RESULTS SUMMARY
+2025-08-07 05:23:54,343 - __main__ - INFO - ============================================================
+2025-08-07 05:23:54,343 - __main__ - INFO - Embedding Ensemble: ❌ FAIL
+2025-08-07 05:23:54,343 - __main__ - INFO - Neo4j Database: ❌ FAIL
+2025-08-07 05:23:54,343 - __main__ - INFO - Question Processing: ❌ FAIL
+2025-08-07 05:23:54,343 - __main__ - INFO - 
+Overall: 0/3 tests passed
+2025-08-07 05:23:54,343 - __main__ - WARNING - ⚠️  3 test(s) failed - Check logs for details
+2025-08-07 05:28:36,109 - __main__ - INFO - ============================================================
+2025-08-07 05:28:36,109 - __main__ - INFO - SEC QA ENGINE - FINAL SYSTEM VALIDATION
+2025-08-07 05:28:36,109 - __main__ - INFO - ============================================================
+2025-08-07 05:28:36,110 - __main__ - INFO - 
+🧪 Running Embedding Ensemble test...
+2025-08-07 05:28:36,110 - __main__ - INFO - Testing Embedding Ensemble with fallback models...
+2025-08-07 05:28:36,110 - src.core.embedding_ensemble - ERROR - Failed to initialize Voyage client: Voyage API key is required
+2025-08-07 05:28:36,110 - src.core.embedding_ensemble - INFO - Attempting to use Financial BERT as Voyage fallback
+2025-08-07 05:28:36,110 - src.models.financial_bert - INFO - Loading financial BERT model: nlpaueb/sec-bert-base
+2025-08-07 05:28:38,310 - src.models.financial_bert - INFO - Financial BERT model loaded successfully on cpu
+2025-08-07 05:28:38,311 - src.models.financial_bert - INFO - Model dimension: 768
+2025-08-07 05:28:38,311 - src.core.embedding_ensemble - INFO - Financial BERT initialized as Voyage fallback
+2025-08-07 05:28:38,311 - src.models.fin_e5_client - INFO - Loading model: intfloat/e5-large-v2
+2025-08-07 05:28:47,277 - src.models.fin_e5_client - INFO - Model loaded successfully, embedding dimension: 1024
+2025-08-07 05:28:47,278 - src.models.fin_e5_client - INFO - Initialized FinE5 client with model: intfloat/e5-large-v2
+2025-08-07 05:28:47,278 - src.models.fin_e5_client - INFO - Using device: cpu
+2025-08-07 05:28:47,278 - src.core.embedding_ensemble - INFO - FinE5 client initialized
+2025-08-07 05:28:47,278 - src.models.xbrl_client - INFO - Initialized XBRL client with embedding dimension: 512
+2025-08-07 05:28:47,278 - src.core.embedding_ensemble - INFO - XBRL client initialized
+2025-08-07 05:28:47,278 - src.models.sparse_embeddings - INFO - Initialized SparseEmbeddings with max_features=10000
+2025-08-07 05:28:47,278 - src.core.embedding_ensemble - INFO - Sparse embeddings client initialized (requires fitting)
+2025-08-07 05:28:47,278 - src.core.embedding_ensemble - INFO - Active embedding models: ['voyage', 'fin_e5', 'xbrl', 'sparse']
+2025-08-07 05:28:47,278 - src.core.embedding_ensemble - INFO - Initialized EmbeddingEnsemble with 4 models
+2025-08-07 05:28:47,278 - src.core.embedding_ensemble - INFO - Model weights: {'voyage': 0.0, 'fin_e5': 0.5, 'xbrl': 0.3, 'sparse': 0.2}
+2025-08-07 05:28:47,278 - src.core.embedding_ensemble - INFO - Initialized EmbeddingEnsemble with 4 models
+2025-08-07 05:28:47,278 - src.core.embedding_ensemble - INFO - Model weights: {'voyage': 0.0, 'fin_e5': 0.5, 'xbrl': 0.3, 'sparse': 0.2}
+2025-08-07 05:28:47,279 - __main__ - INFO - Testing embedding for: 'Apple Inc. reported strong quarterly earnings with revenue growth of 15%.'
+2025-08-07 05:28:47,279 - src.models.financial_bert - INFO - Starting Financial BERT batch embedding: 1 texts
+2025-08-07 05:28:47,396 - src.models.financial_bert - INFO - Financial BERT batch embedding completed: 1/1 successful
+2025-08-07 05:28:47,509 - src.models.fin_e5_client - INFO - Batch embedding completed: 1/1 successful
+2025-08-07 05:28:47,512 - __main__ - ERROR - Embedding ensemble test failed: 0
+2025-08-07 05:28:47,561 - __main__ - INFO - 
+🧪 Running Neo4j Database test...
+2025-08-07 05:28:47,561 - __main__ - INFO - Testing Neo4j database functionality...
+2025-08-07 05:28:47,615 - src.storage.neo4j_client - ERROR - Failed to connect to Neo4j: {code: Neo.ClientError.Security.Unauthorized} {message: The client is unauthorized due to authentication failure.}
+2025-08-07 05:28:47,615 - __main__ - ERROR - Neo4j test failed: {code: Neo.ClientError.Security.Unauthorized} {message: The client is unauthorized due to authentication failure.}
+2025-08-07 05:28:47,615 - __main__ - INFO - 
+🧪 Running Question Processing test...
+2025-08-07 05:28:47,616 - __main__ - INFO - Testing question processing with embedding ensemble...
+2025-08-07 05:28:47,616 - src.core.embedding_ensemble - ERROR - Failed to initialize Voyage client: Voyage API key is required
+2025-08-07 05:28:47,616 - src.core.embedding_ensemble - INFO - Attempting to use Financial BERT as Voyage fallback
+2025-08-07 05:28:47,616 - src.models.financial_bert - INFO - Loading financial BERT model: nlpaueb/sec-bert-base
+2025-08-07 05:28:48,709 - src.models.financial_bert - INFO - Financial BERT model loaded successfully on cpu
+2025-08-07 05:28:48,710 - src.models.financial_bert - INFO - Model dimension: 768
+2025-08-07 05:28:48,710 - src.core.embedding_ensemble - INFO - Financial BERT initialized as Voyage fallback
+2025-08-07 05:28:48,710 - src.models.fin_e5_client - INFO - Loading model: intfloat/e5-large-v2
+2025-08-07 05:28:53,729 - src.models.fin_e5_client - INFO - Model loaded successfully, embedding dimension: 1024
+2025-08-07 05:28:53,730 - src.models.fin_e5_client - INFO - Initialized FinE5 client with model: intfloat/e5-large-v2
+2025-08-07 05:28:53,730 - src.models.fin_e5_client - INFO - Using device: cpu
+2025-08-07 05:28:53,730 - src.core.embedding_ensemble - INFO - FinE5 client initialized
+2025-08-07 05:28:53,730 - src.models.xbrl_client - INFO - Initialized XBRL client with embedding dimension: 512
+2025-08-07 05:28:53,730 - src.core.embedding_ensemble - INFO - XBRL client initialized
+2025-08-07 05:28:53,730 - src.models.sparse_embeddings - INFO - Initialized SparseEmbeddings with max_features=10000
+2025-08-07 05:28:53,730 - src.core.embedding_ensemble - INFO - Sparse embeddings client initialized (requires fitting)
+2025-08-07 05:28:53,730 - src.core.embedding_ensemble - INFO - Active embedding models: ['voyage', 'fin_e5', 'xbrl', 'sparse']
+2025-08-07 05:28:53,730 - src.core.embedding_ensemble - INFO - Initialized EmbeddingEnsemble with 4 models
+2025-08-07 05:28:53,731 - src.core.embedding_ensemble - INFO - Model weights: {'voyage': 0.0, 'fin_e5': 0.5, 'xbrl': 0.3, 'sparse': 0.2}
+2025-08-07 05:28:53,731 - src.core.embedding_ensemble - INFO - Initialized EmbeddingEnsemble with 4 models
+2025-08-07 05:28:53,731 - src.core.embedding_ensemble - INFO - Model weights: {'voyage': 0.0, 'fin_e5': 0.5, 'xbrl': 0.3, 'sparse': 0.2}
+2025-08-07 05:28:53,731 - __main__ - INFO - Testing question: 'What was Apple's revenue growth strategy in their latest filing?'
+2025-08-07 05:28:53,731 - src.models.financial_bert - INFO - Starting Financial BERT batch embedding: 1 texts
+2025-08-07 05:28:53,828 - src.models.financial_bert - INFO - Financial BERT batch embedding completed: 1/1 successful
+2025-08-07 05:28:53,938 - src.models.fin_e5_client - INFO - Batch embedding completed: 1/1 successful
+2025-08-07 05:28:53,938 - __main__ - ERROR - Question processing test failed: 0
+2025-08-07 05:28:53,990 - __main__ - INFO - 
+============================================================
+2025-08-07 05:28:53,990 - __main__ - INFO - TEST RESULTS SUMMARY
+2025-08-07 05:28:53,990 - __main__ - INFO - ============================================================
+2025-08-07 05:28:53,990 - __main__ - INFO - Embedding Ensemble: ❌ FAIL
+2025-08-07 05:28:53,990 - __main__ - INFO - Neo4j Database: ❌ FAIL
+2025-08-07 05:28:53,990 - __main__ - INFO - Question Processing: ❌ FAIL
+2025-08-07 05:28:53,990 - __main__ - INFO - 
+Overall: 0/3 tests passed
+2025-08-07 05:28:53,990 - __main__ - WARNING - ⚠️  3 test(s) failed - Check logs for details
