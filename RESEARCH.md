@@ -359,6 +359,3 @@ The methodological innovations presented here extend beyond financial documents 
 [6] Wang, F., Liu, H., & Chen, G. (2023). Multi-modal embeddings for enhanced document retrieval systems. *ACM Transactions on Information Systems*, 41(2), 1-28.
 
 ---
-
-*Corresponding Author: [Author Name], [Institution]*  
-*Received: [Date]; Accepted: [Date]; Published: [Date]*
