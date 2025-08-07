@@ -16,7 +16,7 @@ The SEC Filings QA Engine is an enterprise-grade financial document analysis pla
 - **Production-Ready**: Enterprise deployment with comprehensive monitoring
 - **Scalable Architecture**: Linear performance scaling with document volume
 - **Security Compliant**: Following financial industry security standards
-- **API-First Design**: RESTful interfaces for seamless integration
+- **CLI-Based Interface**: Command-line tools and Python library for integration
 - **Comprehensive Testing**: Unit, integration, and performance test coverage
 
 ## 1. Technical Approach
@@ -449,18 +449,28 @@ embedding_cache_hits = Counter('embedding_cache_hits_total', 'Embedding cache hi
 
 **Health Checks:**
 ```python
-@app.route('/health')
-def health_check():
-    """Comprehensive health check endpoint"""
+def perform_system_health_check():
+    """Comprehensive system health check"""
+    from src.storage.neo4j_client import Neo4jClient
+    from src.core.embedding_ensemble import EmbeddingEnsemble
+    
     status = {
         "status": "healthy",
         "neo4j": check_neo4j_connection(),
         "embedding_models": check_embedding_models(),
-        "api_services": check_external_apis(),
+        "external_apis": check_external_apis(),
         "memory_usage": get_memory_usage(),
         "response_time": measure_query_performance()
     }
-    return jsonify(status)
+    return status
+
+def check_neo4j_connection():
+    try:
+        client = Neo4jClient()
+        client.execute_query("RETURN 1")
+        return "connected"
+    except Exception as e:
+        return f"failed: {str(e)}"
 ```
 
 **Alerting Configuration:**
@@ -470,85 +480,97 @@ def health_check():
 - Memory usage exceeds threshold
 - API rate limit exceeded
 
-## 9. API Reference
+## 9. Command-Line Interface
 
-### 9.1 Core Endpoints
+### 9.1 Core Usage
 
-**Question Answering API:**
-```python
-POST /api/v1/query
-Content-Type: application/json
+**Question Answering System:**
+```bash
+# Interactive mode
+python sec_qa_system.py
 
-{
-    "question": "What are Apple's main revenue sources?",
-    "companies": ["AAPL"],  # Optional: filter by companies
-    "filing_types": ["10-K", "10-Q"],  # Optional: filter by filing types
-    "date_range": {  # Optional: temporal filtering
-        "start": "2023-01-01",
-        "end": "2024-12-31"
-    },
-    "max_results": 20,  # Optional: limit results
-    "include_citations": true  # Optional: include source citations
-}
-
-# Response
-{
-    "answer": "Apple's primary revenue sources include...",
-    "confidence_score": 0.92,
-    "sources": [
-        {
-            "company": "AAPL",
-            "filing_type": "10-K",
-            "section": "Revenue Recognition",
-            "relevance_score": 0.95,
-            "filing_date": "2024-10-31"
-        }
-    ],
-    "query_time": 0.847,
-    "model_ensemble": ["voyage", "fin_e5", "xbrl"]
-}
+# Direct question
+python -c "
+from sec_qa_system import SECQASystem
+qa = SECQASystem()
+qa.initialize_system()
+result = qa.answer_question('What are Apple main revenue sources?')
+print(result['answer'])
+"
 ```
 
-**System Status API:**
+**Python Library Usage:**
 ```python
-GET /api/v1/status
+from sec_qa_system import SECQASystem
 
-{
-    "system_status": "operational",
-    "database": {
-        "companies": 15,
-        "filings": 127,
-        "sections": 1055,
-        "relationships": 2067
-    },
-    "performance": {
-        "avg_query_time": 0.847,
-        "queries_24h": 1245,
-        "error_rate": 0.02
-    },
-    "last_update": "2024-08-07T12:00:00Z"
-}
+# Initialize system
+qa_system = SECQASystem()
+qa_system.initialize_system()
+
+# Ask questions
+result = qa_system.answer_question(
+    "What are Apple's main revenue sources?"
+)
+
+# Access results
+answer = result['answer']
+sources = result.get('sources', [])
+confidence = result.get('confidence_score', 0.0)
 ```
 
-### 9.2 Administrative Endpoints
+### 9.2 Data Ingestion Commands
 
-**Data Ingestion API:**
+**Comprehensive SEC Ingestion:**
+```bash
+# Ingest all supported companies
+python comprehensive_sec_ingest.py
+
+# Ingest specific company
+python -c "
+from comprehensive_sec_ingest import ComprehensiveSECIngestion
+ingestion = ComprehensiveSECIngestion()
+result = ingestion.process_company_comprehensive('AAPL', 'Technology')
+print(f'Processed: {result}')
+"
+```
+
+**Individual Processing Scripts:**
+```bash
+# Simple Neo4j ingestion
+python simple_neo4j_ingest.py
+
+# Bulk ticker ingestion
+python ingest_all_tickers.py
+
+# Debug embedding generation
+python debug_embeddings.py
+```
+
+### 9.3 System Utilities
+
+**Health Check:**
 ```python
-POST /api/v1/admin/ingest
-Authorization: Bearer <admin_token>
+from sec_qa_system import SECQASystem
 
-{
-    "companies": ["TSLA"],
-    "filing_types": ["10-K", "10-Q"],
-    "force_refresh": false
-}
+qa_system = SECQASystem()
+if hasattr(qa_system, 'health_check'):
+    health = qa_system.health_check()
+    print(f"System Status: {health}")
+```
 
-# Response
-{
-    "job_id": "ing_20240807_001",
-    "status": "started",
-    "estimated_completion": "2024-08-07T13:30:00Z"
-}
+**Configuration Management:**
+```bash
+# Check environment configuration
+python -c "
+import os
+from dotenv import load_dotenv
+load_dotenv()
+
+required_vars = ['OPENAI_API_KEY', 'NEO4J_URI', 'NEO4J_PASSWORD']
+for var in required_vars:
+    status = 'SET' if os.getenv(var) else 'MISSING'
+    print(f'{var}: {status}')
+"
 ```
 
 ## 10. Performance Optimization Guide

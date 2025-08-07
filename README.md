@@ -151,9 +151,21 @@ The system automatically:
 4. Stores in Neo4j with compressed embeddings
 5. Creates cross-filing and cross-company relationships
 
-## Querying the System
+## Using the System
 
-### Basic Usage
+### Interactive Command-Line Mode
+
+```bash
+# Launch interactive QA session
+python sec_qa_system.py
+
+# This starts an interactive session where you can:
+# - Ask natural language questions about SEC filings
+# - Get detailed answers with source citations
+# - Query across multiple companies and filing types
+```
+
+### Python Library Usage
 
 ```python
 from sec_qa_system import SECQASystem
@@ -165,6 +177,23 @@ qa_system.initialize_system()
 # Ask questions
 result = qa_system.answer_question("What are Apple's main revenue sources?")
 print(result['answer'])
+
+# Access additional information
+if 'sources' in result:
+    print(f"Sources: {len(result['sources'])} SEC filings")
+```
+
+### Command-Line Scripts
+
+```bash
+# Process all companies data
+python comprehensive_sec_ingest.py
+
+# Process specific company data
+python simple_neo4j_ingest.py
+
+# Debug embedding generation
+python debug_embeddings.py
 ```
 
 ### Advanced Queries
@@ -188,11 +217,7 @@ result = qa_system.answer_question(
 
 ### Interactive Mode
 
-```bash
-python sec_qa_system.py
-```
-
-This launches an interactive session where you can ask questions and get detailed responses with source citations.
+The system provides a user-friendly command-line interface for asking questions about SEC filings. See the "Using the System" section above for detailed usage instructions.
 
 ## Example Use Cases
 
