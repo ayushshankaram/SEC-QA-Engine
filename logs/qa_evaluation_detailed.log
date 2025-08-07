@@ -3,6 +3,11 @@
 2025-08-07 07:00:39,990 - INFO - 🧠 Multi-model embedding ensemble ready
 2025-08-07 07:00:39,991 - INFO - 🤖 GPT-4o integration active
 2025-08-07 07:00:39,992 - INFO - 🚀 Beginning evaluation question sequence
+2025-08-07 07:00:39,993 - INFO - 📋 SEC Filing Coverage:
+2025-08-07 07:00:39,994 - INFO - 📋   • 10-K/10-Q: Financial and business information (annual/quarterly reports)
+2025-08-07 07:00:39,995 - INFO - 📋   • 8-K: Material events and corporate changes (M&A, leadership, significant events)
+2025-08-07 07:00:39,996 - INFO - 📋   • DEF 14A: Governance and compensation (proxy statements, executive pay)
+2025-08-07 07:00:39,997 - INFO - 📋   • Forms 3,4,5: Insider trading activity (executive transactions, ownership changes)
 
 2025-08-07 07:00:39,993 - INFO - 📝 EVALUATION QUESTION 1/10
 2025-08-07 07:00:39,994 - INFO - 💬 QUESTION: What are the primary revenue drivers for major technology companies, and how have they evolved?

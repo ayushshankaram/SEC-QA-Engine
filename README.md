@@ -15,7 +15,11 @@ This system combines state-of-the-art AI models with financial domain expertise 
 
 ## Key Features
 
-- **Multi-Filing Type Support**: 10-K, 10-Q, 8-K, DEF 14A, Forms 3/4/5
+- **Multi-Filing Type Support**: 
+  - 10-K/10-Q: Financial and business information (annual/quarterly reports)
+  - 8-K: Material events and corporate changes (M&A, leadership, significant events)
+  - DEF 14A: Governance and compensation (proxy statements, executive pay)
+  - Forms 3,4,5: Insider trading activity (executive transactions, ownership changes)
 - **Advanced Embedding Ensemble**: FinE5 + XBRL + Sparse embeddings + Voyage AI
 - **Graph Database**: Neo4j for complex relationship modeling
 - **Cross-Company Analysis**: Competitive and sector-based insights
@@ -46,7 +50,12 @@ User Questions → Query Processing → Semantic Search → GPT-4o → Structure
 
 ![Filing Network](docs/images/filling_relations.png)
 
-*Comprehensive filing network showing temporal relationships between different SEC document types (10-K, 10-Q, 8-K, DEF 14A, Forms 3/4/5) enabling sophisticated cross-filing analysis.*
+*Comprehensive filing network showing temporal relationships between all SEC document types:
+- 10-K/10-Q: Financial and business information (annual/quarterly reports)
+- 8-K: Material events and corporate changes
+- DEF 14A: Governance and compensation (proxy statements) 
+- Forms 3,4,5: Insider trading activity
+This enables sophisticated cross-filing analysis across all major SEC filing types.*
 
 ## Prerequisites
 

@@ -60,11 +60,11 @@ GPT-4o Question Answering
 ```python
 # Dynamic processing based on filing importance
 filing_processing_limits = {
-    "10-K": {"filings": 3, "sections": 8},     # Annual reports
-    "10-Q": {"filings": 3, "sections": 6},     # Quarterly reports  
-    "8-K": {"filings": 2, "sections": 4},      # Material events
-    "DEF 14A": {"filings": 2, "sections": 6},  # Proxy statements
-    "Forms 3/4/5": {"filings": 5, "sections": 3} # Insider trading
+    "10-K": {"filings": 3, "sections": 8},     # Annual reports - comprehensive business information
+    "10-Q": {"filings": 3, "sections": 6},     # Quarterly reports - interim financial updates  
+    "8-K": {"filings": 2, "sections": 4},      # Material events - corporate changes, M&A
+    "DEF 14A": {"filings": 2, "sections": 6},  # Proxy statements - governance, executive compensation
+    "Forms 3/4/5": {"filings": 5, "sections": 3} # Insider trading - executive stock transactions
 }
 ```
 
@@ -205,7 +205,11 @@ def _combine_embeddings(self, embeddings):
 
 The Neo4j database contains:
 - **Company Nodes** (pink): Major corporations organized by sector
-- **Filing Nodes** (orange): SEC documents (10-K, 10-Q, 8-K, DEF 14A, 3/4/5)  
+- **Filing Nodes** (orange): All SEC document types:
+  - 10-K/10-Q: Financial and business information (annual/quarterly)
+  - 8-K: Material events and corporate changes  
+  - DEF 14A: Governance and compensation (proxy statements)
+  - Forms 3,4,5: Insider trading activity
 - **Section Nodes** (blue): Document sections with compressed embeddings
 - **Relationship Edges**: Multi-dimensional connections enabling sophisticated queries
 

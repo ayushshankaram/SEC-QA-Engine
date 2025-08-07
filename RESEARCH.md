@@ -193,10 +193,12 @@ test_cases = {
 
 ### 4. Multi-Filing Type Analysis
 **Comprehensive coverage** beyond traditional approaches:
-- All major SEC filing types (10-K, 10-Q, 8-K, DEF 14A)
-- Insider trading forms (3, 4, 5)
-- Cross-filing contextual analysis
-- Temporal relationship modeling
+- 10-K/10-Q: Financial and business information (annual/quarterly comprehensive reports)
+- 8-K: Material events and corporate changes (M&A, leadership changes, significant events)
+- DEF 14A: Governance and compensation (proxy statements, executive pay, board matters)
+- Forms 3,4,5: Insider trading activity (executive stock transactions, ownership changes)
+- Cross-filing contextual analysis across all document types
+- Temporal relationship modeling for comprehensive financial intelligence
 
 ## 🧪 Experimental Design
 
@@ -248,9 +250,13 @@ This work contributes to multiple research areas:
 
 **Dataset Composition:**
 - **Companies**: Major corporations across multiple sectors
-- **Documents**: Extensive SEC filings (10-K, 10-Q, 8-K, DEF 14A, Forms 3/4/5)
-- **Sections**: Large number of processed document sections
-- **Relationships**: Extensive cross-filing and competitive relationships
+- **Documents**: Comprehensive SEC filing coverage:
+  - 10-K/10-Q: Financial and business information (annual/quarterly reports)
+  - 8-K: Material events and corporate changes 
+  - DEF 14A: Governance and compensation (proxy statements)
+  - Forms 3,4,5: Insider trading activity
+- **Sections**: Large number of processed document sections across all filing types
+- **Relationships**: Extensive cross-filing temporal and competitive relationships
 
 **Evaluation Metrics:**
 - Retrieval accuracy on financial queries

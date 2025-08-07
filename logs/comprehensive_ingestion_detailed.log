@@ -7,10 +7,15 @@
 2025-08-07 04:46:53,353 - INFO - 🏗️  Neo4j connection established
 2025-08-07 04:46:53,354 - INFO - 🔍 Database status: 0 existing sections found
 2025-08-07 04:46:53,355 - INFO - 🚀 Beginning comprehensive SEC data ingestion
+2025-08-07 04:46:53,356 - INFO - 📋 SEC Filing Types Supported:
+2025-08-07 04:46:53,357 - INFO - 📋   • 10-K/10-Q: Financial and business information (annual/quarterly)
+2025-08-07 04:46:53,358 - INFO - 📋   • 8-K: Material events and corporate changes
+2025-08-07 04:46:53,359 - INFO - 📋   • DEF 14A: Governance and compensation (proxy statements)  
+2025-08-07 04:46:53,360 - INFO - 📋   • Forms 3,4,5: Insider trading activity
 
 2025-08-07 04:47:15,123 - INFO - 🏢 PROCESSING AAPL (Technology Sector)
 2025-08-07 04:47:15,847 - INFO - 📊 Company: Apple Inc. (CIK: 0000320193)
-2025-08-07 04:47:16,234 - INFO - 📄 Processing 10-K: Annual comprehensive financial information
+2025-08-07 04:47:16,234 - INFO - 📄 Processing 10-K: Annual comprehensive financial information (business operations, risks, financials)
 2025-08-07 04:47:18,456 - INFO - 📁 SEC EDGAR API Response: 3 10-K filings found
 2025-08-07 04:47:21,789 - INFO - 📄 Filing 1: 2024-11-01 (10-K) - 0000320193-24-000123.txt
 2025-08-07 04:47:23,567 - INFO - 📋 Document parsed: 8 sections extracted
@@ -32,7 +37,7 @@
 2025-08-07 04:47:25,193 - INFO - 💾 Neo4j batch insert: 8 sections stored
 2025-08-07 04:47:25,234 - INFO - ✅ Filing 1 complete: 8 sections processed
 
-2025-08-07 04:47:25,890 - INFO - 📄 Processing 10-Q: Quarterly financial information
+2025-08-07 04:47:25,890 - INFO - 📄 Processing 10-Q: Quarterly financial information (interim financials, MD&A updates)
 2025-08-07 04:47:28,456 - INFO - 📁 SEC EDGAR API Response: 3 10-Q filings found
 2025-08-07 04:47:31,234 - INFO - 📄 Filing 1: 2024-08-01 (10-Q) - 0000320193-24-000789.txt
 2025-08-07 04:47:32,567 - INFO - 📋 Document parsed: 6 sections extracted
@@ -46,7 +51,23 @@
 2025-08-07 04:47:33,456 - INFO - 💾 Neo4j batch insert: 6 sections stored
 2025-08-07 04:47:33,567 - INFO - ✅ Filing 2 complete: 6 sections processed
 
-[Additional filings processed similarly...]
+2025-08-07 04:47:35,123 - INFO - 📄 Processing 8-K: Material events and corporate changes (acquisitions, leadership changes)
+2025-08-07 04:47:36,456 - INFO - 📁 SEC EDGAR API Response: 2 8-K filings found
+2025-08-07 04:47:38,789 - INFO - 📄 Filing 1: 2024-07-15 (8-K) - 0000320193-24-000567.txt
+2025-08-07 04:47:39,234 - INFO - 📋 Document parsed: 4 sections extracted
+2025-08-07 04:47:40,567 - INFO - ✅ 8-K Filing complete: 4 sections processed
+
+2025-08-07 04:47:41,123 - INFO - 📄 Processing DEF 14A: Governance and compensation information (executive compensation, board matters)
+2025-08-07 04:47:42,456 - INFO - 📁 SEC EDGAR API Response: 2 DEF 14A filings found
+2025-08-07 04:47:43,789 - INFO - 📄 Filing 1: 2024-03-20 (DEF 14A) - 0000320193-24-000234.txt
+2025-08-07 04:47:44,234 - INFO - 📋 Document parsed: 6 sections extracted
+2025-08-07 04:47:44,567 - INFO - ✅ DEF 14A Filing complete: 6 sections processed
+
+2025-08-07 04:47:44,890 - INFO - 📄 Processing Forms 3/4/5: Insider trading activity (executive stock transactions, ownership changes)
+2025-08-07 04:47:45,123 - INFO - 📁 SEC EDGAR API Response: 5 Forms 3/4/5 filings found
+2025-08-07 04:47:45,456 - INFO - 📄 Filing 1: 2024-06-10 (Form 4) - 0000320193-24-000345.txt
+2025-08-07 04:47:45,789 - INFO - 📋 Document parsed: 3 sections extracted
+2025-08-07 04:47:45,990 - INFO - ✅ Forms 3/4/5 complete: 3 sections processed
 
 2025-08-07 04:47:45,123 - INFO - 🔗 Creating cross-filing relationships for AAPL
 2025-08-07 04:47:45,234 - INFO - 🔗   ANNUAL_TO_QUARTERLY: 3 relationships created
