@@ -405,29 +405,7 @@ Monitor through logs:
 - Neo4j query performance
 - API usage statistics
 
-## Contributing
 
-We welcome contributions from the community! Please follow these guidelines:
-
-### Development Setup
-1. **Fork the repository** and clone your fork
-2. **Create a virtual environment**: `python -m venv venv && source venv/bin/activate`
-3. **Install development dependencies**: `pip install -r requirements.txt -r requirements-dev.txt`
-4. **Set up pre-commit hooks**: `pre-commit install`
-
-### Contributing Guidelines
-1. **Create feature branch**: `git checkout -b feature/amazing-feature`
-2. **Write tests**: Ensure all new code has appropriate test coverage
-3. **Follow code style**: Use `black`, `flake8`, and `mypy` for formatting
-4. **Update documentation**: Add docstrings and update README if needed
-5. **Commit changes**: Use descriptive commit messages
-6. **Push to branch**: `git push origin feature/amazing-feature`
-7. **Open Pull Request**: Provide detailed description of changes
-
-### Code of Conduct
-- Be respectful and inclusive in all interactions
-- Follow professional communication standards
-- Report any issues to the maintainers
 
 ## License
 
@@ -449,34 +427,6 @@ This software may be used for commercial purposes under the MIT License terms. P
 - **SEC.io** - Enhanced API access for SEC filings
 - **EDGAR Database** - Historical and real-time SEC filings
 
-### Research Community
-- Financial NLP research community for domain expertise
-- Open source contributors for model improvements
-- Academic institutions for validation and benchmarking
 
-## Support & Community
-
-### Getting Help
-- **Documentation**: Comprehensive guides in `/docs` directory
-- **Issues**: Report bugs via [GitHub Issues](https://github.com/your-repo/issues)
-- **Discussions**: Join community discussions for questions
-- **Email**: Contact maintainers for enterprise support
-
-### Enterprise Support
-For enterprise deployments and custom solutions:
-- Priority support and SLA guarantees
-- Custom model training and fine-tuning
-- Deployment assistance and consulting
-- Integration with existing financial systems
-
-### Community Resources
-- **Wiki**: Community-maintained documentation and tutorials
-- **Examples**: Sample implementations and use cases
-- **Blog**: Technical deep-dives and case studies
-- **Roadmap**: Future development plans and priorities
-
----
-
-**Built for the financial research community**
 
 
